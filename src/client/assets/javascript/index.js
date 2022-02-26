@@ -364,5 +364,8 @@ function startRace(id) {
 }
 
 function accelerate(id) {
-	return fetch(`${SERVER}/api/races/${id}/accelerate`, defaultFetchOpts)
+	return fetch(`${SERVER}/api/races/${id}/accelerate`, {
+		method:'POST',
+		...defaultFetchOpts(),
+	})
 }
